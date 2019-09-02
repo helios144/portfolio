@@ -10,7 +10,7 @@ also add this for spinner animation to your css stylesheet:
         }
       }
 */
-
+var nextToastID=0;
 function toast(toastObj) {
     if(typeof toastObj === 'string' || toastObj instanceof String){
       if($('#toast-' + toastObj).length){
@@ -53,7 +53,7 @@ function toast(toastObj) {
           positionClass="top-toast";
         break;
         case "middle":
-          position = "top: 50%;";
+          position = "bottom: 50%;";
           positionClass="middle-toast";
         break;
         default:
@@ -109,12 +109,15 @@ function toast(toastObj) {
       }
 
       var fullBgColor = 'rgba(' + bgColor + ',' + opacity + ')';
-      var toastIndex = (id != null) ? id : parent.children(".toasts"+addPosClass).children('.toast').length;
+     // var toastIndex = (id != null) ? id : parent.children(".toasts"+addPosClass).children('.toast').length;
+      var toastIndex = (id != null) ? id : nextToastID;
+      if(id==null)nextToastID++;
       var toastLength = parent.children(".toasts" + addPosClass).children('.' + positionClass).length;
       var previousToastBottom,previousToastHeight;
       if(toastLength > 0){
-        previousToastBottom = $('.' + positionClass).eq(toastLength - 1).css('bottom');
-        previousToastHeight = $('.' + positionClass).eq(toastLength - 1).css('height');
+        //rework needed
+        previousToastBottom = parent.children((prepend==false)?'.toasts.app':'.toasts.pre').children('.' + positionClass).eq(toastLength - 1).css('bottom');
+        previousToastHeight = parent.children((prepend==false)?'.toasts.app':'.toasts.pre').children('.' + positionClass).eq(toastLength - 1).css('height');
         previousToastBottom = parseInt(previousToastBottom.match(/[0-9]+/));
         previousToastHeight = parseInt(previousToastHeight.match(/[0-9]+/));
         position = 'bottom: ' + (previousToastBottom+previousToastHeight) + 'px;';
