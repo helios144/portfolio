@@ -2660,3 +2660,13 @@ input, select, textarea {
           transform: rotate(360deg);
         }
 	  }
+	  .dropdown-menu{
+		  display:none;
+		  background-color:rgba(0, 0, 0, 0.3);
+	  }
+	  .dropdown-menu li:hover{
+		background-color: #363d40;
+	  }
+	  #nav>ul>li:hover{
+		background-color: #272c2e;
+	  }

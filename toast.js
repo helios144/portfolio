@@ -129,7 +129,7 @@ function toast(toastObj) {
           parent.append('<div class="toasts app"></div>');
         }
       if(parent.prop("tagName") == 'BODY') fullToast = ' <div class="toast ' + positionClass+'" id="toast-' + toastIndex + '" style="pointer-events:none;   width:100%; min-height: ' + height + '; position:fixed;display: none; z-index:9999;font-size: '+fontSize+'; ' + position + ';left: 0; text-align: center;">';
-      else fullToast = ' <div class="toast ' + positionClass + '" id="toast-' + toastIndex+'" style="pointer-events:none;   width:'+width+'; min-height: ' + height + ';display: none; z-index:9999;font-size: '+fontSize+'; text-align: center;">';
+      else fullToast = ' <div class="toast ' + positionClass + '" id="toast-' + toastIndex+'" style="pointer-events:none;   width:100%'/*+width+*/+'; min-height: ' + height + ';display: none; z-index:9999;font-size: '+fontSize+'; text-align: center;">';
       fullToast += '<div  style="min-width: ' + width + ';min-height: ' + height + ';display: inline-block; padding: 5px 15px;background-color: ' + fullBgColor + ';border-radius:'+borderRadius+';color: rgb(' + textColor + ');">' + text + '</div></div>';
       parent.children(".toasts"+addPosClass).append(fullToast);
       $(".toast").fadeIn(150);

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Toast.js</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+	</head>
+	<body class="is-preload" >
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<!--<div id="logo">
+							<span class="image avatar48"><img src="" alt="" /></span>
+							<h1 id="title"><br></h1>
+							<p><br></p>
+						</div>-->
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html" id="top-link"><span class="icon solid fa-home">Pradinis puslapis</span></a></li>
+								<li class="dropdown-btn"><a href="#portfolio"><span class="icon solid fa-th">Portfolio</span></a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="tictactoe.html">Kryžiukai nuliukai Online</a></li>
+										<li><a href="geopostit.html">GeoPostIt</a></li>
+										<li><a href="toastjs.html">Toastjs</a></li>
+										<li><a href="eshop.html">E. Parduotuvė</a></li>
+										<li><a href="game">Unity Žaidimas „Stotelių siaubas“</a></li>
+									</ul>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+						<ul class="icons">
+							<li><a href="https://github.com/helios144" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/saulius-gaizutis/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:saulius.gaizutis@gmail.com" class="icon fa fa-envelope"><span class="label">E-mail</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+			<div id="main">
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header >
+								<h2 class="alt">Toast.js</h2>
+							</header>
+						</div>
+					</section>
+					<section id="portfolio" class="two">
+						<div class="container">
+							<header>
+								<h2>Apie</h2>
+							</header>
+							<p>Tai yra iššokantys pranešimai padaryti naudojantis:
+								<ul style="list-style-type:none">
+									<li>jQuery</li>
+								</ul>
+							</p>
+
+							<div class="row">
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<div class="image fit" id="demo1"><!--<img src="images/pic06.jpg" alt="" />--></div>
+										<header>
+											<h3>Paprastas pranešimas</h3>
+										</header>
+									</article>
+									</div>
+								
+									<div class="col-4 col-12-mobile">
+										<article class="item">
+											<div class="image fit" id="demo2"><!--<img src="images/pic06.jpg" alt="" />--></div>
+											<header>
+												<h3>Pranešimas su ikona</h3>
+											</header>
+										</article>
+										</div>
+									
+										<div class="col-4 col-12-mobile">
+												<article class="item">
+													<div class="image fit" id="demo3"><!--<img src="images/pic06.jpg" alt="" />--></div>
+													<header>
+														<h3>Krovimosi ratukas</h3>
+													</header>
+												</article>
+										</div>
+									</div>
+									<div class="row">
+									<dic class="col-12"><button type="button" id="toggleDemo" class="btn btn-default">►/❚❚ Demo</button></dic>	
+								</div>
+						</div>
+					</section>
+			</div>
+			<div id="footer">
+					<ul class="copyright">
+						<li></li><li></li>
+					</ul>
+
+			</div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="toast.js"></script>
+			<script>
+				var play=false,randColor=[],randIcon=['fa-info-circle','fa-exclamation-triangle','fa-times-circle','fa-check-circle'];
+				$(document).ready(function(){
+					toast({
+							text:'Paprastas pranešimas',parent:$('#demo1'),autoRemove:false
+						});
+						toast({
+							text:'Pranešimas',icon:'fa fa-info-circle',parent:$('#demo2'),autoRemove:false
+						});
+						toast({
+							loadingSpinner:true,parent:$('#demo3'),width:'100px',autoRemove:false
+						});
+						/*setInterval(function(){
+							var randColor;
+							randColor=Math.floor(Math.random()*255);
+							toast({
+							text:'Paprastas pranešimas',duration:2000,textColor:'100,200,'+randColor
+						});
+						randColor=Math.floor(Math.random()*255);
+						toast({
+							text:'Pranešimas',icon:'fa fa-info-circle',duration:2000,iconColor:'100,200,'+randColor
+						});
+						randColor=Math.floor(Math.random()*255);
+						toast({
+							loadingSpinner:true,width:'100px',duration:2000,spinnerColor:'100,200,'+randColor
+						});
+						},6000);*/
+						
+						function randInterval(min,max){
+							return Math.floor(Math.random()*(max-min+1))+min;
+						}
+						$('#toggleDemo').click(function(){
+							play=!play;
+						});
+						setInterval(function(){
+							if(play==true){
+									for(var i=0;i<3;i++){
+										randColor[i]=randInterval(100,255);
+									}
+									toast({
+										text:'Demo: Paprastas pranešimas',duration:3000,textColor:randColor[0]+','+randColor[1]+','+randColor[2]
+									});
+									setTimeout(function(){
+										for(var i=0;i<3;i++){
+											randColor[i]=randInterval(100,255);
+										}
+										toast({
+											text:'Demo: Pranešimas',icon:'fa '+randIcon[randInterval(0,3)],duration:3000,iconColor:randColor[0]+','+randColor[1]+','+randColor[2]
+										});
+										setTimeout(function(){
+												for(var i=0;i<3;i++){
+													randColor[i]=randInterval(100,255);
+												}
+											toast({
+												loadingSpinner:true,width:'100px',duration:3000,spinnerColor:randColor[0]+','+randColor[1]+','+randColor[2],text:'Demo: Kraunasi...',spinnerPosition:'left'
+											});
+										},2000);
+									},2000);
+								}
+						},6000);
+				});
+			</script>
+			</body>
+</html>

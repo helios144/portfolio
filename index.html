@@ -26,7 +26,16 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li class="dropdown-btn"><a href="#portfolio"><span class="icon solid fa-th">Portfolio</span></a>
+									
+									<ul class="dropdown-menu" >
+										<li><a href="tictactoe.html">Kryžiukai nuliukai Online</a></li>
+										<li><a href="geopostit.html">GeoPostIt</a></li>
+										<li><a href="toastjs.html">Toastjs</a></li>
+										<li><a href="eshop.html">E. Parduotuvė</a></li>
+										<li><a href="game">Unity Žaidimas „Stotelių siaubas“</a></li>
+									</ul>	
+								</li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">Apie mane</span></a></li>
 								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Kontaktai</span></a></li>
 							</ul>
@@ -35,20 +44,16 @@
 				</div>
 
 				<div class="bottom">
-
-					<!-- Social Icons -->
 						<ul class="icons">
 							<li><a href="https://github.com/helios144" class="icon brands fa-github"><span class="label">Github</span></a></li>
 							<li><a href="https://www.linkedin.com/in/saulius-gaizutis/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:saulius.gaizutis@gmail.com" class="icon fa-envelope"><span class="label">E-mail</span></a></li>
 						</ul>
 
 				</div>
 
 			</div>
-
-		<!-- Main -->
 			<div id="main">
-				<!-- Intro -->
 					<section id="top" class="one dark cover">
 						<div class="container">
 
@@ -63,8 +68,6 @@
 
 						</div>
 					</section>
-
-				<!-- Portfolio -->
 					<section id="portfolio" class="two">
 						<div class="container">
 
@@ -72,14 +75,14 @@
 								<h2>Portfolio</h2>
 							</header>
 
-							<p>Tai yra mano atlikti darbai(kai kurie yra užduotys studijų metu), kurie manau yra verčiausi dėmesio ir tikiuosi atspindi, kokiais sugebėjimais pasižymiu.</p>
+							<p>Tai yra mano atlikti darbai(kai kurie yra užduotys studijų metu), kurie manau yra verčiausi dėmesio.</p>
 
 							<div class="row">
 								<div class="col-4 col-12-mobile">
 									<article class="item">
 										<a href="tictactoe.html" class="image fit"><img src="images/tictactoe1.JPG" alt="" /></a>
 										<header>
-											<h3>TicTacToe Online</h3>
+											<h3>Kryžiukai nuliukai Online</h3>
 										</header>
 									</article>
 									</div>
@@ -105,7 +108,7 @@
 									<article class="item">
 										<a href="ehop.html" class="image fit"><img src="images/eshop.jpg" alt="" /></a>
 										<header>
-											<h3>eShop</h3>
+											<h3>E. Parduotuvė</h3>
 										</header>
 									</article>
 								</div>
@@ -121,8 +124,6 @@
 							</div>
 						</div>
 					</section>
-
-				<!-- About Me -->
 					<section id="about" class="three">
 						<div class="container">
 
@@ -130,11 +131,9 @@
 								<h2>Apie mane</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
+						<!--	<img src="images/pic08.jpg" class="image featured" alt="" />-->
 							<p>Mėgstu, tiek turėti veiksmų planą ir dirbti organizuotai, tiek viską darytis,
-								 taip kaip gaunasi, todėl iškilus netikėtai situacijai nepasimetu. 
-								 Patinka padėti kitiems ir galiu sau suprantamus dalykus paaiškinti.
+								 taip kaip gaunasi. Patinka padėti kitiems ir galiu sau suprantamus dalykus paaiškinti.
 								 Galiu dirbti tiek individualiai, tiek komandoje. Nevengiu kritikos, 
 								 nes visada džiugu sužinoti, kur galima tobulėti.  
 								 Laikau save plataus mąstymo, nes į problemą galiu pažiūrėti skirtingu kampu ir
@@ -142,8 +141,6 @@
 
 						</div>
 					</section>
-
-				<!-- Contact -->
 					<section id="contact" class="four">
 						<div class="container">
 
@@ -154,23 +151,18 @@
 							<ul class="icons" id="contacts">
 								<li><a href="https://github.com/helios144" class="icon brands fa-github" style="font-size:5em"><span class="label">Github</span></a></li>
 								<li><a href="https://www.linkedin.com/in/saulius-gaizutis/" class="icon brands fa-linkedin " style="font-size:5em"><span class="label">LinkedIn</span></a></li>
-								<li><a href="mailto:saulius.gaizutis@gmail.com" class="icon solid fa-envelope " style="font-size:4em"><span class="label">Email</span></a> <button type="button" id="copy-link" style="padding:7px 10px 7px 10px;"><i  class="fa fa-copy btn btn-default"></i></button> </li>
+								<li><a href="mailto:saulius.gaizutis@gmail.com" class="icon solid fa-envelope " style="font-size:4em; position:relative;left:17px;"><span class="label">Email</span></a> <button type="button" id="copy-link" style="padding:7px 10px 7px 10px;"><i  class="fa fa-copy btn btn-default"></i></button> </li>
 							</ul>
 						</div>
 					</section>
 
 			</div>
-
-		<!-- Footer -->
 			<div id="footer">
-				<!-- Copyright -->
 					<ul class="copyright">
 						<li></li><li></li>
 					</ul>
 
 			</div>
-
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -183,20 +175,12 @@
 					
 			$(document).ready(function(){
 				$('#toastdemo').mouseenter(function(){
-					if(!$('body').children('.toasts').length){
+					if(!$('#toast-demo').length){
 						var randColor=Math.floor(Math.random()*255);
 						toast({
-							icon:'fa fa-info-circle',iconSize:'30px',iconColor:'100,200,'+randColor,text:"Hello, I'm a Toast message",duration:2000
+							id:'demo',icon:'fa fa-info-circle',iconSize:'30px',iconColor:'100,200,'+randColor,text:"Hello, I'm a Toast message",duration:2000
 						});
 					}
-				});
-				$('#copy-link').click(function(){
-					navigator.clipboard.writeText('saulius.gaizutis@gmail.com').then(function(){
-						toast({text:'El. pašto adresas nukopijuotas į iškarpinę',duration:3000});
-					},function(err){
-						toast({text:'Nepavyko nukopijuoti el. pašto adreso',duration:3000});
-					});
-					
 				});
 			});
 			</script>

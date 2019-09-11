@@ -121,3 +121,20 @@
 				});
 
 })(jQuery);
+
+$(document).ready(function(){
+	$('#copy-link').click(function(){
+		navigator.clipboard.writeText('saulius.gaizutis@gmail.com').then(function(){
+		if(!$('#toast-copy').length)	toast({id:'copy',text:'El. pašto adresas nukopijuotas į iškarpinę',duration:3000});
+		},function(err){
+			if(!$('#toast-copy').length) toast({id:'copy',text:'Nepavyko nukopijuoti el. pašto adreso',duration:3000});
+		});
+		
+	});
+	$('.dropdown-btn').mouseenter(function(e){
+		$(e.currentTarget).find('.dropdown-menu').show();
+	});
+	$('.dropdown-btn').mouseleave(function(e){
+		$(e.currentTarget).find('.dropdown-menu').hide();
+	});
+});
